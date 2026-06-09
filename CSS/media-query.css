@@ -1,0 +1,265 @@
+
+@media (max-width: 1280px) {
+
+  .wrapper {
+    grid-template-columns: 0.45fr 2fr;
+  }
+
+  .main {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .card-amount {
+    font-size: 28px;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 2fr 1fr 1fr 0.8fr 0.8fr;
+    font-size: 12px;
+  }
+
+  .pcard-number {
+    font-size: 15px;
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+
+  .wrapper {
+    grid-template-areas:
+      "navbar navbar"
+      "sidebar main";
+    grid-template-columns: 0.6fr 2fr;
+  }
+
+  .sidebar-link span {
+    display: none;
+  }
+
+  .sidebar-link {
+    justify-content: center;
+    padding: 14px;
+  }
+
+  .sidebar-link .icon img {
+    width: 22px;
+  }
+
+  .action-btn span {
+    display: none;
+  }
+
+  .action-btn {
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .sidebar-section-label {
+    display: none;
+  }
+
+  .sidebar .nav-logo {
+    display: none;
+  }
+
+  .main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "card-1  card-2"
+      "card-3  card-3"
+      "card-4  card-5"
+      "card-7  card-7"
+      "card-7  card-7"
+      "card-7  card-7"
+      "card-6  card-8"
+      "card-6  card-8"
+      "card-9  card-10";
+    grid-template-rows: auto;
+    gap: 12px;
+  }
+
+  .card-amount {
+    font-size: 24px;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 2fr 1fr 1fr 0.8fr 0.8fr;
+    font-size: 12px;
+  }
+
+  .tx-date {
+    font-size: 11px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+
+  .wrapper {
+    grid-template-areas:
+      "navbar"
+      "main";
+    grid-template-columns: 1fr;
+  }
+
+
+  .sidebar {
+    display: none;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+
+  .navbar {
+    margin: 12px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .logo-text {
+    font-size: 22px;
+  }
+
+  .logo-sub {
+    font-size: 11px;
+  }
+
+  .nav-status {
+    display: none;
+  }
+
+
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "card-1"
+      "card-2"
+      "card-3"
+      "card-4"
+      "card-5"
+      "card-7"
+      "card-7"
+      "card-6"
+      "card-9"
+      "card-8"
+      "card-10";
+    grid-template-rows: auto;
+    gap: 12px;
+    padding: 0 12px 24px;
+  }
+
+  .card-1, .card-2, .card-3,
+  .card-4, .card-5, .card-6,
+  .card-7, .card-8, .card-9, .card-10 {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .card-amount {
+    font-size: 26px;
+  }
+
+
+  .card-7 {
+    overflow-x: auto;
+  }
+
+  .transactions-table {
+    min-width: 600px;
+  }
+
+  .table-header,
+  .table-row {
+    font-size: 12px;
+  }
+
+
+  .bills-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+
+  .budget-item {
+    margin-bottom: 20px;
+  }
+
+  .payment-card {
+    padding: 28px 16px;
+    margin-bottom: 20px;
+  }
+
+  .pcard-number {
+    font-size: 15px;
+  }
+
+
+  .bar-chart {
+    gap: 8px;
+  }
+
+  .bar {
+    width: 14px;
+  }
+
+
+  .account-item {
+    margin-bottom: 16px;
+  }
+
+
+  .tag-blue {
+    margin-right: 10px;
+  }
+
+  .tag-green {
+    margin-right: 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .navbar {
+    margin: 8px;
+    padding: 12px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-actions {
+    gap: 10px;
+  }
+
+  .nav-user-info {
+    display: none;
+  }
+
+  .card-amount {
+    font-size: 22px;
+  }
+
+  .bills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bar {
+    width: 12px;
+  }
+
+  .gre-height {
+    height: 70px;
+  }
+
+  .re-style {
+    height: 35px;
+  }
+}
