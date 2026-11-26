@@ -1,96 +1,149 @@
 /* ---------- laptop: two columns ---------- */
 @media (max-width: 1280px) {
-    .dashboard {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        grid-template-areas:
-            "balance balance income income expense expense"
-            "transactions transactions transactions transactions transactions transactions"
-            "activities activities activities bills bills bills"
-            "budget budget budget chart chart chart"
-            "budget budget budget accounts accounts accounts"
-            "payments payments payments payments payments payments";
-    }
-    .payments {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        column-gap: 16px;
-    }
-    .payments .card-header {
-        grid-column: 1 / -1;
-    }
+  .dashboard {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-areas:
+      "balance balance income income expense expense"
+      "transactions transactions transactions transactions transactions transactions"
+      "activities activities activities bills bills bills"
+      "budget budget budget chart chart chart"
+      "budget budget budget accounts accounts accounts"
+      "payments payments payments payments payments payments";
+  }
+  .payments {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 16px;
+  }
+  .payments .card-header {
+    grid-column: 1 / -1;
+  }
 }
 
-/* ---------- tablet: sidebar hidden, logo moves to navbar ---------- */
+.sidebar-toggle,
+.sidebar-backdrop {
+  display: none;
+}
+
+/* ---------- tablet: sidebar becomes a toggleable side drawer ---------- */
 @media (max-width: 1023px) {
-    .wrapper {
-        grid-template-columns: minmax(0, 1fr);
-    }
-    .sidebar {
-        display: none;
-    }
-    .navbar .logo {
-        display: flex;
-    }
-    .user small {
-        display: none;
-    }
+  .wrapper {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sidebar {
+    position: fixed;
+    z-index: 20;
+    inset: 0 0 0 auto;
+    width: min(300px, 85vw);
+    height: 100dvh;
+    overflow-y: auto;
+    padding: 24px 14px;
+    border-left: 0;
+    box-shadow: -8px 0 28px rgb(16 24 40 / 12%);
+    transform: translateX(105%);
+    transition: transform 0.25s ease;
+    visibility: hidden;
+  }
+  .sidebar-open .sidebar {
+    transform: translateX(0);
+    visibility: visible;
+  }
+  .sidebar-toggle {
+    display: grid;
+    flex: 0 0 36px;
+    font-size: 20px;
+  }
+  .sidebar-backdrop {
+    position: fixed;
+    z-index: 19;
+    inset: 0;
+    display: block;
+    border: 0;
+    background: rgb(16 24 40 / 45%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .sidebar-open .sidebar-backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .sidebar > .logo,
+  .sidebar-label,
+  .quick-actions {
+    display: revert;
+  }
+  .side-links {
+    display: grid;
+    margin-top: 32px;
+    overflow: visible;
+  }
+  .side-links a {
+    flex: initial;
+  }
+  .navbar .logo {
+    display: flex;
+  }
+  .user small {
+    display: none;
+  }
 }
 
 /* ---------- below 768px: one column (matches the PDF layout) ---------- */
 @media (max-width: 767px) {
-    .content {
-        padding: 16px;
-    }
-    .dashboard {
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-areas:
-            "balance"
-            "income"
-            "expense"
-            "activities"
-            "transactions"
-            "bills"
-            "budget"
-            "chart"
-            "accounts"
-            "payments";
-    }
-    .payments {
-        display: block;
-    }
+  .content {
+    padding: 16px;
+  }
+  .dashboard {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "balance"
+      "income"
+      "expense"
+      "activities"
+      "transactions"
+      "bills"
+      "budget"
+      "chart"
+      "accounts"
+      "payments";
+  }
+  .payments {
+    display: block;
+  }
 }
 
 /* ---------- small phones ---------- */
 @media (max-width: 480px) {
-    .content {
-        padding: 10px;
-    }
-    .dashboard {
-        gap: 16px;
-    }
-    .card {
-        padding: 16px;
-    }
-    .navbar {
-        gap: 12px;
-    }
-    .nav-actions {
-        justify-content: space-between;
-        width: 100%;
-    }
-    .user {
-        margin-right: auto;
-    }
-    .stat strong {
-        font-size: 28px;
-    }
-    h2 {
-        font-size: 16px;
-    }
-    .account {
-        flex-wrap: wrap;
-    }
-    .pcard-number {
-        font-size: 16px;
-    }
+  .content {
+    padding: 10px;
+  }
+  .dashboard {
+    gap: 16px;
+  }
+  .card {
+    padding: 16px;
+  }
+  .navbar {
+    gap: 12px;
+  }
+  .nav-actions {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .user {
+    margin-right: auto;
+  }
+  .stat strong {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  .account {
+    flex-wrap: wrap;
+  }
+  .pcard-number {
+    font-size: 16px;
+  }
 }
